@@ -101,7 +101,6 @@ class Main {
         sc.close();
 }
 }
-*/
 import java.util.Scanner;
 
 class Main {
@@ -109,8 +108,91 @@ class Main {
         Scanner sc = new Scanner(System.in);
         double side1 = sc.nextDouble();
         double side2 = sc.nextDouble();
-        double hypotenuse = Math.sqrt(Math.pow(side1, 2) + Math.pow(side2, 2));
-        System.out.println("Hypotenuse = " + hypotenuse);
+        double side3 = sc.nextDouble();
+        double hypotenuse =(Math.pow(side1, 2) + Math.pow(side2, 2));
+        double equalside=Math.pow(side3,2);
+        if(side1<=0||side3<=0||side2<=0){
+        if(hypotenuse==equalside){
+            System.out.println("pythagerous");
+        }
+        
+        else{
+            System.out.println("Not a Pythagerous");
+        }
+        
+        sc.close();
+    }
+}
+*/
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+       System.out.println("Enter Your Name:");
+       String name=sc.nextLine();
+       System.out.println("Enter Your Age:");
+       int age=sc.nextInt();
+       System.out.println("Enter Your Number:");
+       String number=sc.nextLine();
+       sc.nextLine(); 
+       System.out.println("Enter Your Gender:");
+       String gender=sc.nextLine();
+       System.out.println("Enter Your Balance:");
+       double Balance=sc.nextDouble();
+       sc.nextLine();
+       System.out.println("Do You Want Loan:");
+       String loan=sc.nextLine();
+
+         switch(loan){
+               case "yes":
+                   System.out.println("Enter Your Loan Amount?:");
+                   double loanAmount=sc.nextDouble();
+                   System.out.println("Enter number of years to repay:");
+                   int years = sc.nextInt();
+                   double interestRate=9.1;
+                   double interest=(loanAmount*interestRate*years)/100;
+                   double totalPayable=loanAmount+interest;
+                   System.out.printf("Interest :%.2f\n",interest);
+                   System.out.printf("Payable Amount: %.2f\n",totalPayable);
+                   Balance+=loanAmount;
+                   sc.nextLine();
+                   break;
+              case "no":
+                  System.out.println("No Loan Selected");
+                  break;
+              default:
+              System.out.println("Inavlid option");
+           }
+        System.out.println("Do you want to deposit or withdraw?");
+        String action = sc.nextLine();
+
+        switch (action) {
+            case "deposit":
+                System.out.println("Enter amount to deposit:");
+                double deposit = sc.nextDouble();
+                if (deposit > 0) {
+                    Balance += deposit;
+                    System.out.println("Deposit successful.");
+                } else {
+                    System.out.println("Invalid deposit amount.");
+                }
+                break;
+
+            case "withdraw":
+                System.out.println("Enter amount to withdraw:");
+                double withdraw = sc.nextDouble();
+                if (withdraw > 0 && withdraw <= Balance) {
+                    Balance -= withdraw;
+                    System.out.println("Withdrawal successful.");
+                } else {
+                    System.out.println("Invalid or insufficient funds.");
+                }
+                break;
+
+            default:
+                System.out.println("Invalid transaction option.");
+        }
         sc.close();
     }
 }
