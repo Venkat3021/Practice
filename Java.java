@@ -196,3 +196,83 @@ class Main {
         sc.close();
     }
 }
+/*import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        String s=sc.nextLine();
+        int len=s.length();
+        String rev="";
+       while(len>0){
+           rev+=s.charAt(len-1);
+           len--;
+       }
+       if(rev.equals(s)){
+           System.out.println("Palindrome");
+       }
+       else{
+           System.out.println("Not a Palindrome");
+       }
+        
+	}
+}
+*/
+/*import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        String password = sc.nextLine();         
+        String confirmpassword = sc.nextLine();    
+        int count = 0;      
+        int maxAttempts = 3;
+        
+        while (count <= maxAttempts) {
+            
+            if (password.equals(confirmpassword)) {
+                System.out.println("Your Password is Correct!");
+                break;  
+            } else {
+                System.out.println("Invalid Password! Try Again!");
+                count++;  
+                 System.out.println("Count:"+count);
+                if (count <= maxAttempts) {
+                    
+                    password = sc.nextLine(); 
+                    confirmpassword = sc.nextLine();
+                } else {
+                    System.out.println("Max attempts reached. Access denied.");
+                }
+            }
+       
+        }
+    }
+}
+*/
+/*
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        String str1 = sc.nextLine();   
+        String str=str1.toLowerCase();
+        String vow = "";      
+        String con="";
+      for (int i = 0; i < str.length(); i++) {
+            char chara = str.charAt(i);  
+            if(chara=='a'||chara=='e'||chara=='i'||chara=='o'||chara=='u'){
+                vow+=chara;
+            }
+            else{
+                con+=chara;
+            }
+        }
+       String vowelsandCon=vow+con;
+       System.out.println(vowelsandCon);
+    }
+}
+*/
